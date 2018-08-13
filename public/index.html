@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+
+
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_common.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_left.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_view.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_edit.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_option.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_layer.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_language.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_sticker.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_skin.css?20180723065632">
+
+
+
+
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/calendar_works.css?20180723065632">
+
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/dh_widget.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/cp_address.css?20180723065632">
+      <link type="text/css" rel="stylesheet" href="https://calendar.navercorp.com/css/dist/toast.css?20180723065632">
+
+      <style id="widget_area_style">@media all and (max-width:1000px){#wrap #container{width:auto;right:0}#wrap.deskhome #dh_aside_widget{display:none}#wrap #section_cen{right:0 !important}}</style>
+
+      <style>
+
+          .fog {
+              position: absolute;
+              left: 0;
+              top: 0;
+              padding: 0;
+              margin: 0;
+              border: 0;
+              width: 100px;
+              height: 100px;
+              background-color: #000;
+              opacity: 0;
+          }
+
+
+          head { font-family: "NORMAL"; }
+          body:after { content: "NORMAL"; display: none; }
+
+          @media screen and (min-width: 1600px) {
+              head { font-family: "WIDE"; }
+              body:after { content: "WIDE"; }
+          }
+
+
+          .view_todo .todo_list.grid {
+          }
+          .view_todo .todo_list.grid ul {
+              overflow: auto;
+          }
+          .view_todo .todo_list.grid ul li {
+              float: left;
+              width: 310px;
+              height: 97px;
+              border-radius: 5px;
+              background: #fff;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+              position: relative;
+              margin: 0 10px 10px 0;
+              overflow: hidden;
+          }
+          .view_todo .todo_list.grid ul li div {
+              background: none;
+          }
+          .view_todo .todo_list.grid ul li .btn_more {
+              position: absolute;
+              margin: 0;
+              top: 62px;
+              right: -3px;
+          }
+          .view_todo .todo_list.grid ul li.on .btn_more {
+              background-position: 100% -564px;
+          }
+          .view_todo .todo_list.grid ul li .btn_state {
+              position: absolute;
+              margin: 0 0 0 0;
+              top: 69px;
+              left: 10px;
+          }
+          .view_todo .todo_list.grid ul li .info {
+              position: absolute;
+              top: 35px;
+              right: -1px;
+              margin: 0;
+              background: #fff;
+          }
+          .view_todo .todo_list.grid ul li .info span {
+              background-position: 100% -895px;
+          }
+          .view_todo .todo_list.grid ul li .info span em,
+          .view_todo .todo_list.grid ul li .info span a {
+              height: 20px;
+              line-height: 20px;
+          }
+          .view_todo .todo_list.grid ul li .inp_txt {
+              padding-right: 28px;
+          }
+
+          .page {
+              position: relative;
+              width:  29.7cm;
+              min-height: 21cm;
+              /*padding: 1cm;*/
+              /*margin: 1cm auto;*/
+              border: 1px #D3D3D3 solid;
+              border-radius: 5px;
+              background: white;
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          }
+          .subpage {
+              padding: 1cm;
+              border: 5px red solid;
+              height: 256mm;
+              outline: 2cm #FFEAEA solid;
+          }
+
+          @page {
+              size: A4 landscape;
+          }
+          @media print {
+              .page {
+                  margin: 0;
+                  border: initial;
+                  border-radius: initial;
+                  width: initial;
+                  min-height: initial;
+                  box-shadow: initial;
+                  background: initial;
+                  page-break-after: always;
+              }
+          }
+
+          .month {
+              position: absolute;
+              display: block;
+              width: 100px;
+              font-size: 110px;
+              font-family: Helvetica;
+              font-weight: bold;
+              top: 1.5cm;
+              left: 990px;
+              z-index: 999;
+              text-align: center;
+              /*overflow: hidden;*/
+              /*border: 1px solid #000;*/
+          }
+
+          .month_str {
+              position: absolute;
+              display: block;
+              width: 100px;
+              font-size: 20px;
+              font-family: Helvetica;
+              font-weight: bold;
+              top: 1cm;
+              left: 990px;
+              z-index: 999;
+              text-align: center;
+              /*border: 1px solid #000;*/
+          }
+
+      </style>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
