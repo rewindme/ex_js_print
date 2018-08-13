@@ -3,8 +3,8 @@
 * Memo
 *
 */
-import React, {Component, Fragment} from "react";
-import PropTypes from "prop-types";
+import React, {Component} from "react";
+// import PropTypes from "prop-types";
 
 
 export class Memo extends Component {
@@ -23,8 +23,8 @@ export class Memo extends Component {
 			<div className="memo">
 				<div style={{borderBottom: "1px solid #000", height: "20px"}}>Memo</div>
 				<ul>
-					{this.state.arr.map(() => (
-						<li className="memo_li">
+					{this.state.arr.map((a, i) => (
+						<li className="memo_li" key={i}>
 							<input type="checkbox"/>
 						</li>
 					))}

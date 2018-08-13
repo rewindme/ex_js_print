@@ -129,7 +129,7 @@
               height: 20cm; /* 21cm 보작 작게 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
               /*min-height: 21cm;*/
               /*padding: 1cm;*/
-              /*margin: 1cm auto;*/
+              margin: 0 auto; /*중앙 정렬*/
               border: 1px #D3D3D3 solid;
               border-radius: 5px;
               background: white;
@@ -148,7 +148,6 @@
           }
           @media print {
               .page {
-                  margin: 0;
                   border: initial;
                   border-radius: initial;
                   width: initial;
@@ -188,10 +187,8 @@
               /*border: 1px solid #000;*/
           }
 
-          .test {
+          .module_layout {
               position: absolute;
-              /*top: 100px;*/
-              /*left: 0px;*/
           }
 
           .memo {
@@ -208,6 +205,26 @@
               border-bottom: 1px solid #ccc;
               height: 15px;
               padding-top: 5px;
+          }
+          .print_btn {
+              border: 1px solid #999;
+              padding: 10px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 14px;
+          }
+          /*#btn_area {*/
+              /*position: fixed;*/
+              /*left: 1200px;*/
+              /*top: 100px;*/
+              /*z-index: 9999;*/
+          /*}*/
+          #btn_area {
+              width: 100%;
+              top: 100px;
+              text-align: center;
+              padding: 40px;
           }
 
       </style>
