@@ -123,8 +123,11 @@
 
           .page {
               position: relative;
+              display: block;
               width:  29.7cm;
-              min-height: 21cm;
+              /*height: 21cm;*/
+              height: 20cm; /* 21cm 보작 작게 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
+              /*min-height: 21cm;*/
               /*padding: 1cm;*/
               /*margin: 1cm auto;*/
               border: 1px #D3D3D3 solid;
@@ -141,6 +144,7 @@
 
           @page {
               size: A4 landscape;
+              bleed: auto;
           }
           @media print {
               .page {
@@ -151,12 +155,12 @@
                   min-height: initial;
                   box-shadow: initial;
                   background: initial;
-                  page-break-after: always;
+                  page-break-before: always;
               }
           }
 
           .month {
-              position: absolute;
+              position: relative;
               display: block;
               width: 100px;
               font-size: 110px;
@@ -171,7 +175,7 @@
           }
 
           .month_str {
-              position: absolute;
+              position: relative;
               display: block;
               width: 100px;
               font-size: 20px;
@@ -182,6 +186,28 @@
               z-index: 999;
               text-align: center;
               /*border: 1px solid #000;*/
+          }
+
+          .test {
+              position: absolute;
+              /*top: 100px;*/
+              /*left: 0px;*/
+          }
+
+          .memo {
+              position: absolute;
+              display: block;
+              width: 150px;
+              font-family: Helvetica;
+              font-weight: bold;
+              top: 240px;
+              left: 960px;
+              z-index: 1000;
+          }
+          .memo_li {
+              border-bottom: 1px solid #ccc;
+              height: 15px;
+              padding-top: 5px;
           }
 
       </style>
