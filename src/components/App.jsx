@@ -16,12 +16,15 @@ export class App extends Component {
 		const htmlData = SampleHTML.data;
 		const arr = [];
 
-		for (let i = 0; i < 3; i++) {
-			arr[i] = i;
+		for (let i = 0; i < 12; i++) {
+			arr[i] = i + 1;
 		}
-		this.state = {htmlData, arr};
-		// console.log(htmlData);
-		window.print();
+		this.state = {
+			htmlData,
+			arr,
+			count: 2,
+		};
+		// window.print();
 	}
 
 	componentDidMount() {
@@ -60,6 +63,14 @@ export class App extends Component {
 		window.print();
 	};
 
+	onCountSelect = e => {
+		console.log(e.target.value);
+		this.setState({
+			...this.state,
+			count: e.target.value,
+		});
+	};
+
 	hideBtn = () => {
 		const btn_area = window.document.getElementById("btn_area");
 		btn_area.style.display = "none";
@@ -74,11 +85,20 @@ export class App extends Component {
 		return (
 			<div>
 				<div id="btn_area">
+					<div className="term">
+						다중 인쇄:
+						<select defaultValue={this.state.count} onChange={this.onCountSelect}>
+							{this.state.arr.map((count, i) => (
+								<option value={i + 1} key={i}>{count}</option>
+							))}
+						</select>
+						 장
+					</div>
 					<input type="button" value="인쇄" className="print_btn" onClick={this.onClickPrint}/>
 				</div>
-				{this.state.arr.map((el, i) => (
-					<MonthSheet htmlData={this.state.htmlData} idx={i} key={"month" + i}/>
-				))}
+				{this.state.arr.map((el, i) => {
+					return (i < this.state.count) ? (<MonthSheet htmlData={this.state.htmlData} idx={i} key={"month" + i}/>) : null;
+				})}
 			</div>
 		);
 	}
