@@ -60,7 +60,7 @@
 
 
           head { font-family: "NORMAL"; }
-          body:after { content: "NORMAL"; display: none; }
+          body:after { content: "NORMAL"; display: none;}
 
           @media screen and (min-width: 1600px) {
               head { font-family: "WIDE"; }
@@ -121,30 +121,38 @@
               padding-right: 28px;
           }
 
+          /* 인쇄를 취해 추가된 css - by.jukyung. */
+          /*사이즈 참고 링크: https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size*/
+          /*A4 기준으로 레이아웃을 잡고, 크거나 작은 용지로 인쇄를 할 경우엔 배율을 조정하여 인쇄 하도록 함*/
+          /*인쇄 기본 영역. bg를 white로 필수 설정*/
           .page {
+              background: white;/*필수 옵션*/
               position: relative;
               display: block;
-              width:  29.7cm;
-              /*height: 21cm;*/
-              height: 20cm; /* 21cm 보작 작게 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
+              padding: 0.5cm;
+              margin: 0 auto 5px auto; /*중앙 정렬 - 배율 변경시 중앙 정렬로 인쇄됨*/
+              width:  28.6cm;
+              height: 19.9cm; /* padding을 포함해서 21cm 미만으로 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
               /*min-height: 21cm;*/
-              /*padding: 1cm;*/
-              margin: 0 auto; /*중앙 정렬*/
-              border: 1px #D3D3D3 solid;
-              border-radius: 5px;
-              background: white;
-              box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+              /*border: 1px #D3D3D3 solid;*//*border는 size에 추가로 포함되기 때문에 주의 사이즈 책정시 고려해야한다.*/
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);/*화면 구분용도로 사용함. 인쇄에 포함되지 않음(그런 것 같음 0ㅂ0a)*/
           }
-          .subpage {
-              padding: 1cm;
-              border: 5px red solid;
-              height: 256mm;
-              outline: 2cm #FFEAEA solid;
+
+          /*가로모드*/
+          .page .landscape {
+              width:  28.6cm;
+              height: 19.9cm; /* padding을 포함해서 21cm 미만으로 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
+          }
+          /*세로모드*/
+          .page .portrait {
+              width:  28.6cm;
+              height: 19.9cm; /* padding을 포함해서 21cm 미만으로 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
           }
 
           @page {
-              size: A4 landscape;
-              bleed: auto;
+              size: auto;
+              /*bleed: auto;*/
+              margin: 0mm;
           }
           @media print {
               .page {
@@ -165,8 +173,9 @@
               font-size: 110px;
               font-family: Helvetica;
               font-weight: bold;
-              top: 1.5cm;
-              left: 990px;
+              /*top: 1cm;*/
+              top: 1cm;
+              left: 25cm;
               z-index: 999;
               text-align: center;
               /*overflow: hidden;*/
@@ -180,8 +189,8 @@
               font-size: 20px;
               font-family: Helvetica;
               font-weight: bold;
-              top: 1cm;
-              left: 990px;
+              top: 0.5cm;
+              left: 25cm;
               z-index: 999;
               text-align: center;
               /*border: 1px solid #000;*/
@@ -197,8 +206,8 @@
               width: 150px;
               font-family: Helvetica;
               font-weight: bold;
-              top: 240px;
-              left: 960px;
+              top: 6.5cm;
+              left: 25.0cm;
               z-index: 1000;
           }
           .memo_li {
@@ -239,7 +248,7 @@
 
       </style>
   </head>
-  <body>
+  <body style="background-color: #cccccc">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>

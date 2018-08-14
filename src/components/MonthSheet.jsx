@@ -20,10 +20,12 @@ export class MonthSheet extends Component {
 		const frames = window.document.getElementsByClassName("frame");
 		const el = frames[this.props.idx];
 		el.style.position = "relative";
-		el.style.width = "900px";
-		el.style.height = `${700}px`;
-		el.style.top = "1cm";
-		el.style.left = "1cm";
+		el.style.width = `${24}cm`;
+		el.style.height = `${20}cm`;
+		// el.style.top = "1cm";
+		// el.style.left = "1cm";
+		el.style.top = "0";
+		el.style.left = "0";
 		// el.style.border = "1px solid black";
 		// window.print();
 	}

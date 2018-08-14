@@ -1,4 +1,3 @@
-
 const htmlData = `<div id="month_frame" class="frame" onselectstart="return false;" ondragstart="return false;" style="display: block; top: 101px;">
 						<h3 class="blind">월간 일정 보기</h3>
 						<div class="monthly_calendar">
@@ -18,6 +17,136 @@ const htmlData = `<div id="month_frame" class="frame" onselectstart="return fals
 							
 						</div>
 					</div>`;
-const SampleHTML = {data: htmlData};
+const option_ui = `<dl class="_non_t_table_opt _print_set_detail print_set_detail" style="display: block;">
+				<dt>레이아웃</dt>
+				<dd class="_print_view_dd layout">
+					<ul class="layout">
+					<li class="_print_view_li d on">
+						
+						<p><input type="radio" id="print_day" name="print_view" class="_print_view radio01" value="day"> <label for="print_day">일간</label></p>
+					</li>
+					<li class="_print_view_li w on">
+						
+						<p><input type="radio" id="print_week" name="print_view" class="_print_view radio01" value="week"> <label for="print_week">주간</label></p>
+					</li>
+					<li class="_print_view_li m on">
+						
+					<p><input type="radio" id="print_month" name="print_view" class="_print_view radio01" value="month" checked=""> <label for="print_month">월간</label></p>
+					</li>
+					<li class="_print_view_li l on">
+						
+						<p><input type="radio" id="print_list" name="print_view" class="_print_view radio01" value="list"> <label for="print_list">목록</label></p>
+					</li>
+					</ul>
+				</dd>
+				<dt><span class="pos_date">날짜범위</span>
+					
+					<a href="#" class="link_help pos_help _wrongrange_help_img" style="display: none;"><span class="blind"></span></a>
+				</dt>
+				<dd class="_date_period_day period" style="display: none;">
+				    <div class="wrap">
+					   <input type="text" value="" class="_start_date text" style="width:107px"><span class="dc_hyphen">-</span><input type="text" value="" class="_end_date text" style="width:107px"><label for="chk0_0" class="ck_type"><input type="checkbox" id="chk0_0" class="_today">오늘</label>
+						
+                    </div>	   
+				</dd>
+				<dd class="_date_period_week period" style="display: none;">
+				    <div class="wrap">
+						<input type="text" value="" class="_start_date text" style="width:107px"> 부터
+						<select class="_print_weeks selectbox" style="width:78px">
+						<option value="1">1주</option>
+						<option value="2">2주</option>
+						<option value="3">3주</option>
+						<option value="4">4주</option>
+						<option value="5">5주</option>
+						</select>
+						
+                    </div>
+				</dd>
+				<dd class="_date_period_month period" style="display: block;">
+				    <div class="wrap">
+				    	<input type="text" value="" class="_start_month text" style="width:107px"><span class="dc_hyphen">-</span><input type="text" value="" class="_end_month text" style="width:107px"><label for="chk0_1" class="ck_type"><input type="checkbox" id="chk0_1" class="_this_month">이번달 입력</label>
+						
+					</div>
+				</dd>
+				<dd class="_date_period_list period" style="display: none;">
+				    <div class="wrap">
+						<input type="text" value="" class="_start_month text" style="width:107px"><span class="_month_hyphen dc_hyphen">-</span><input type="text" value="" class="_end_month text" style="width:107px"><label class="_this_month_label ck_type" for="chk0_2"><input type="checkbox" id="chk0_2" class="_this_month">이번달 입력</label>
+						
+						<input type="text" value="" class="_start_year text" style="width:107px"><span class="_year_hyphen dc_hyphen">-</span><input type="text" value="" class="_end_year text" style="width:107px"><label class="_this_year_label ck_type" for="chk0_2"><input type="checkbox" id="chk0_2" class="_this_year">올해</label>
+						
+					</div>
+				</dd>
+                <dt class="_font_style_subject" style="display: block;">글꼴</dt>
+                <dd class="_font_style font" style="display: block;">
+                    <div class="wrap">
+	                    <select class="_font_size_select">
+	                    <option value="5">가장 작게</option>
+	                    <option value="6">작게</option>
+	                    <option value="7" selected="">보통</option>
+	                    <option value="8">크게</option>
+	                    <option value="9">가장 크게</option>
+	                    </select>
+	                    <label for="ck1" class="ck_type _font_color_area"><input type="checkbox" id="ck1">폰트 색상 적용</label>
+                    </div>
+                </dd>
+                <dt class="_page_orientation_subject" style="display: block;">용지 방향</dt>
+                <dd class="paper _page_orientation" style="display: block;">
+                    <ul>
+                    <li>
+                        <p><input type="radio" id="rdo2_0" name="rdo0" class="radio01 _landscape" checked=""> <label for="rdo2_0">가로</label></p>
+                    </li>
+                    <li>
+                        <p><input type="radio" id="rdo2_1" name="rdo0" class="radio01 _portrait"> <label for="rdo2_1">세로</label></p>
+                    </li>
+                    </ul>
+                </dd>
+				<dt>인쇄 방식</dt>
+				<dd class="_print_time_dd type">
+				    <div class="wrap">
+						<ul>
+							<li>
+                                <input type="radio" id="print_user_time" name="print_time" class="_print_user_time radio01" value="user" checked="" disabled=""> <label for="print_user_time">사용자 설정(1장만 출력)</label>
+								<p class="set_time">
+                                    <strong>시작시간</strong>
+									<select class="_start_hour" style="width:78px;" disabled="">
+										<option value="0">오전12시</option>
+										<option value="1">오전01시</option>
+										<option value="2">오전02시</option>
+										<option value="3">오전03시</option>
+										<option value="4">오전04시</option>
+										<option value="5">오전05시</option>
+										<option value="6">오전06시</option>
+										<option value="7">오전07시</option>
+										<option value="8">오전08시</option>
+										<option value="9">오전09시</option>
+										<option value="10">오전10시</option>
+										<option value="11">오전11시</option>
+										<option value="12">오후12시</option>
+										<option value="13">오후01시</option>
+										<option value="14">오후02시</option>
+										<option value="15">오후03시</option>
+										<option value="16">오후04시</option>
+										<option value="17">오후05시</option>
+										<option value="18">오후06시</option>
+										<option value="19">오후07시</option>
+										<option value="20">오후08시</option>
+										<option value="21">오후09시</option>
+										<option value="22">오후10시</option>
+										<option value="23">오후11시</option>
+									</select>
+								</p>
+							</li>
+							<li>
+								<p class="tit"><input type="radio" id="print_24_time" name="print_time" class="_print_24_time radio01" value="24time" disabled=""> <label for="print_24_time">24시간 전체(2장 이상 출력)</label></p>
+							</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>`;
+
+const SampleHTML = {
+	data: htmlData,
+	option_ui: option_ui
+};
 
 export default SampleHTML;

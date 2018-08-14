@@ -28,7 +28,8 @@ export class App extends Component {
 	}
 
 	componentDidMount() {
-		var beforePrint = () => {
+		var beforePrint = e => {
+			console.log(e);
 			// alert('Before');
 			this.hideBtn();
 		};
@@ -45,9 +46,9 @@ export class App extends Component {
 			mediaQueryList.addListener(function (mql) {
 				//alert($(mediaQueryList).html());
 				if (mql.matches) {
-					beforePrint();
+					beforePrint(mql);
 				} else {
-					afterPrint();
+					afterPrint(mql);
 				}
 			});
 		}
@@ -85,6 +86,7 @@ export class App extends Component {
 		return (
 			<div>
 				<div id="btn_area">
+
 					<div className="term">
 						다중 인쇄:
 						<select defaultValue={this.state.count} onChange={this.onCountSelect}>
