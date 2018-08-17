@@ -7,6 +7,7 @@ import React, {Component} from "react";
 // import PropTypes from "prop-types";
 import SampleHTML from "../data/SampleHTML";
 import MonthSheet from "./MonthSheet";
+import OpitonContainer from "./OpitonContainer";
 
 
 export class App extends Component {
@@ -14,6 +15,7 @@ export class App extends Component {
 		super(props);
 
 		const htmlData = SampleHTML.data;
+		const option_ui = SampleHTML.option_ui;
 		const arr = [];
 
 		for (let i = 0; i < 12; i++) {
@@ -21,8 +23,9 @@ export class App extends Component {
 		}
 		this.state = {
 			htmlData,
+			option_ui,
 			arr,
-			count: 2,
+			count: 8,
 		};
 		// window.print();
 	}
@@ -86,7 +89,7 @@ export class App extends Component {
 		return (
 			<div>
 				<div id="btn_area">
-
+					<OpitonContainer option_ui={this.state.option_ui}/>
 					<div className="term">
 						다중 인쇄:
 						<select defaultValue={this.state.count} onChange={this.onCountSelect}>
