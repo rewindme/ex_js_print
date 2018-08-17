@@ -169,7 +169,8 @@
           @media print {
               .page {
                   border: 0.2mm dashed #999;
-                  margin: 0;
+                  margin: auto; /* 중앙 정렬: 상하만 적용됨 */
+                  text-align: center;
                   width: initial;
                   min-height: initial;
                   width:  28.0cm;
@@ -185,49 +186,48 @@
               }
           }
 
+          .side_layout {
+              position: absolute;
+              width: 3.9cm;
+              left: 24.5cm;
+              top: 0.5cm;
+              text-align: center;
+              /*border: 1px dashed #999;*/
+          }
+
           .month {
               position: relative;
+              margin: -0.2cm auto 0 auto;
               display: block;
-              width: 100px;
+              width: 3cm;
               font-size: 110px;
               font-family: Helvetica;
               font-weight: bold;
-              /*top: 1cm;*/
-              top: 1cm;
-              left: 24.7cm;
-              z-index: 999;
               text-align: center;
-              /*overflow: hidden;*/
-              /*border: 1px solid #000;*/
+              /*border: 1px dashed #999;*/
           }
 
           .month_str {
               position: relative;
+              margin: auto;
               display: block;
-              width: 100px;
+              width: 3cm;
               font-size: 20px;
               font-family: Helvetica;
               font-weight: bold;
-              top: 0.5cm;
-              left: 24.5cm;
-              z-index: 999;
               text-align: center;
-              /*border: 1px solid #000;*/
-          }
-
-          .module_layout {
-              position: absolute;
+              /*border: 1px dashed #999;*/
           }
 
           .memo {
-              position: absolute;
+              position: relative;
               display: block;
-              width: 3.7cm;
+              margin: auto;/* position: relative;  margin: auto; 설정으로 중앙 정렬 */
+              text-align: left;
+              width: 3.6cm;
+              top:1.7cm;
               font-family: Helvetica;
               font-weight: bold;
-              top: 6.5cm;
-              left: 24.6cm;
-              z-index: 1000;
           }
           .memo_li {
               border-bottom: 1px solid #ccc;
