@@ -9,7 +9,7 @@ import SampleHTML from "../data/SampleHTML";
 import MonthSheet from "./MonthSheet";
 // import OpitonContainer from "./OpitonContainer";
 import TestPanel from "./TestPanel";
-import PrintGuide from "./PrintGuide";
+// import PrintGuide from "./PrintGuide";
 
 
 export class App extends Component {
@@ -48,7 +48,7 @@ export class App extends Component {
 		return (
 			<Fragment>
 				<TestPanel/>
-				<PrintGuide/>
+				{/*<PrintGuide/>*/}
 				<div id="btn_area" className="out_of_print">
 					{/*<OpitonContainer option_ui={this.state.option_ui}/>*/}
 					{/*<div id="layout_option" className="out_of_print">*/}
