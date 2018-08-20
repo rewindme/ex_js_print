@@ -26,8 +26,11 @@ export class TestPanel extends Component {
 
 	onGuideShowCheck = e => {
 		const pages = window.document.getElementsByClassName("page");
-		const els = [...pages];
-		console.log(pages);
+		const els = [];//ie에서 [...pages]로 사용하면 오류 발생
+		// console.log(pages);
+		for (let i = 0; i < pages.length; i++) {
+			els.push(pages[i])
+		}
 		els.map(el => {
 			if (e.target.checked) {
 				el.classList.add("layout_guide");
