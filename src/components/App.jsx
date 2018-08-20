@@ -3,7 +3,7 @@
 * App
 *
 */
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 // import PropTypes from "prop-types";
 import SampleHTML from "../data/SampleHTML";
 import MonthSheet from "./MonthSheet";
@@ -25,7 +25,7 @@ export class App extends Component {
 			htmlData,
 			option_ui,
 			arr,
-			count: 1,
+			count: 2,
 		};
 		// window.print();
 	}
@@ -76,18 +76,18 @@ export class App extends Component {
 	};
 
 	hideBtn = () => {
-		const btn_area = window.document.getElementById("btn_area");
-		btn_area.style.display = "none";
+		// const btn_area = window.document.getElementById("btn_area");
+		// btn_area.style.display = "none";
 	};
 
 	showBtn = () => {
-		const btn_area = window.document.getElementById("btn_area");
-		btn_area.style.display = "block";
+		// const btn_area = window.document.getElementById("btn_area");
+		// btn_area.style.display = "block";
 	};
 
 	render() {
 		return (
-			<div>
+			<Fragment>
 				<div id="btn_area">
 					<OpitonContainer option_ui={this.state.option_ui}/>
 					<div className="term">
@@ -104,7 +104,7 @@ export class App extends Component {
 				{this.state.arr.map((el, i) => {
 					return (i < this.state.count) ? (<MonthSheet htmlData={this.state.htmlData} idx={i} key={"month" + i}/>) : null;
 				})}
-			</div>
+			</Fragment>
 		);
 	}
 }
