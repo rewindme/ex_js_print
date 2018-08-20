@@ -57,6 +57,15 @@
           #btn_area {
               display: none;
           }
+          .page {
+              display: block;
+          }
+          .print_preview_hide {
+              display: block;
+          }
+          .test_option_panel {
+              display: none;
+          }
       </style>
       <style type="text/css" media="screen">
           body {
@@ -107,6 +116,25 @@
           .term input {
               width: 40px;
               text-align: center;
+          }
+          .page {
+              display: none;
+          }
+          .print_preview_hide {
+              display: none;
+          }
+          .test_option_panel {
+              display: block;
+              position: fixed;
+              margin: 20px;
+              padding: 20px;
+              background-color: white;
+              width: 150px;
+              heihgt: 100px;
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);/*화면 구분용도로 사용함. 인쇄에 포함되지 않음(그런 것 같음 0ㅂ0a)*/
+              z-index: 9999;
+              border: 1px solid #bbb;
+              background-color: #eee;
           }
   </style>
       <style>
@@ -211,7 +239,10 @@
           }
           /* 레이아웃 위치를 확인하기 위한 가이드 css: border이므로 사이즈가 포함되는 것을 인지할 것 */
           .layout_guide {
-              /*border: 0.1mm dashed #999;*/
+              border: 0.1mm dashed #999;
+          }
+          .hide_area {
+              display: none;
           }
 
           .page_bg {

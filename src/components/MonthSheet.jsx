@@ -33,10 +33,10 @@ export class MonthSheet extends Component {
 
 	render() {
 		return (
-			<div>
+			<Fragment>
 				<div className="spacing"></div>
 				<div className="paper_guide">
-					<div className="page layout_guide">
+					<div className="page">
 						<div className="page_bg">
 							<div className="side_layout">
 								<span className="month_str">{this.mon_type[this.props.idx]}. <span style={{fontWeight: "normal"}}>2018</span></span>
@@ -47,7 +47,7 @@ export class MonthSheet extends Component {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

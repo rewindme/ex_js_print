@@ -8,6 +8,7 @@ import React, {Component, Fragment} from "react";
 import SampleHTML from "../data/SampleHTML";
 import MonthSheet from "./MonthSheet";
 import OpitonContainer from "./OpitonContainer";
+import TestPanel from "./TestPanel";
 
 
 export class App extends Component {
@@ -88,6 +89,7 @@ export class App extends Component {
 	render() {
 		return (
 			<Fragment>
+				<TestPanel/>
 				<div id="btn_area">
 					<OpitonContainer option_ui={this.state.option_ui}/>
 					<div className="term">
@@ -101,9 +103,11 @@ export class App extends Component {
 					</div>
 					<input type="button" value="인쇄" className="print_btn" onClick={this.onClickPrint}/>
 				</div>
-				{this.state.arr.map((el, i) => {
-					return (i < this.state.count) ? (<MonthSheet htmlData={this.state.htmlData} idx={i} key={"month" + i}/>) : null;
-				})}
+				<div id="print_preview">
+					{this.state.arr.map((el, i) => {
+						return (i < this.state.count) ? (<MonthSheet htmlData={this.state.htmlData} idx={i} key={"month" + i}/>) : null;
+					})}
+				</div>
 			</Fragment>
 		);
 	}
