@@ -34,7 +34,7 @@ export class MonthSheet extends Component {
 	render() {
 		return (
 			<Fragment>
-				<div className="spacing"></div>
+				<div className="spacing out_of_print"></div>
 				<div className="paper_guide">
 					<div className="page">
 						<div className="page_bg">

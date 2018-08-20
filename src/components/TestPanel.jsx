@@ -49,7 +49,7 @@ export class TestPanel extends Component {
 
 	render() {
 		return (
-			<div className="test_option_panel">
+			<div className="test_option_panel out_of_print">
 				<input type="checkbox" id="preview_show_checkbox" onChange={this.onPreviewShowCheck} defaultChecked={true}/>
 				<label htmlFor="preview_show_checkbox"> 미리보기 표시</label>
 				<br/>

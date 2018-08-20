@@ -16,7 +16,7 @@ export class PrintGuide extends Component {
 
 	render() {
 		return (
-			<div id="print_guide_tooltip" className="print_hide">
+			<div id="print_guide_tooltip" className="out_of_print">
 				<img src="../images/firefox_print.jpg"/>
 				<img src="../images/safari.jpg"/>
 			</div>
