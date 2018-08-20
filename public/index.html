@@ -163,12 +163,14 @@
 
           @page {
               size: auto;
+              /*size: A4 landscape;!* 상하 중앙 정렬되지만 배율 수정시 A4 영역만 프린트 됨 *!*/
               /*bleed: 0cm;*/
               /*margin: 0mm; !* margin이 들어가면 safari에서 페이지 분할이 제대로 되지 않음*/
           }
+
           @media print {
               .page {
-                  border: 0.2mm dashed #999;
+                  border: 0.1mm dashed #999;
                   margin: auto; /* 중앙 정렬: 좌우만 적용됨 */
                   text-align: center;
                   width: initial;
