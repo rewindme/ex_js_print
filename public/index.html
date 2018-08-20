@@ -19,7 +19,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>JS Print</title>
 
 
       <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_common.css?201s80723065632">
@@ -163,16 +163,16 @@
 
           @page {
               size: auto;
-              bleed: 3cm;
+              /*bleed: 0cm;*/
               /*margin: 0mm; !* margin이 들어가면 safari에서 페이지 분할이 제대로 되지 않음*/
           }
           @media print {
               .page {
                   border: 0.2mm dashed #999;
-                  margin: auto; /* 중앙 정렬: 상하만 적용됨 */
+                  margin: auto; /* 중앙 정렬: 좌우만 적용됨 */
                   text-align: center;
                   width: initial;
-                  min-height: initial;
+                  /*min-height: initial;*/
                   width:  28.0cm;
                   height: 18.2cm;
                   /*box-shadow: initial;*/

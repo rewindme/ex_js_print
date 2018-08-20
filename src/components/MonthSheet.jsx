@@ -39,7 +39,7 @@ export class MonthSheet extends Component {
 						<div className="month">{`${this.props.idx + 1}`}</div>
 						<Memo/>
 					</div>
-				<div className="end"  dangerouslySetInnerHTML={{__html: this.props.htmlData}} />
+					<div className="end"  dangerouslySetInnerHTML={{__html: this.props.htmlData}} />
 				</div>
 			</div>
 		);

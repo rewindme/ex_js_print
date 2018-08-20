@@ -25,7 +25,7 @@ export class App extends Component {
 			htmlData,
 			option_ui,
 			arr,
-			count: 8,
+			count: 1,
 		};
 		// window.print();
 	}
