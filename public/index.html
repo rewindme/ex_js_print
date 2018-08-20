@@ -46,6 +46,9 @@
 
       <!--<style id="widget_area_style">@media all and (max-width:1000px){#wrap #container{width:auto;right:0}#wrap.deskhome #dh_aside_widget{display:none}#wrap #section_cen{right:0 !important}}</style>-->
       <style type="text/css" media="print">
+          .layout_guide {
+              border: 0.1mm dashed #999;
+          }
           .spacing {
               display: none;
           }
@@ -59,19 +62,6 @@
           }
           .term {
               display: none;
-          }
-          .page {
-              border: 0.1mm dashed #999;
-              margin: auto; /* 중앙 정렬: 좌우만 적용됨 */
-              text-align: center;
-              /*min-height: initial;*/
-              width: 28.0cm;
-              height: 18.2cm;
-              /*box-shadow: initial;*/
-              background: #fff;
-              /*page-break-before: always ;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
-              page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*/
-              page-break-after: always;/*페이지 분할을 위해서 모든 브라우저에서 필수*/
           }
       </style>
       <style type="text/css" media="screen">
@@ -218,6 +208,9 @@
               /*min-height: 21cm;*/
               /*border: 1px #D3D3D3 solid; border는 size에 추가로 포함되기 때문에 주의 사이즈 책정시 고려해야한다.*/
               /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);!*화면 구분용도로 사용함. 인쇄에 포함되지 않음(그런 것 같음 0ㅂ0a)*!*/
+              /*page-break-before: always ;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
+              page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*/
+              page-break-after: always;/*페이지 분할을 위해서 모든 브라우저에서 필수*/
           }
 
           .page_bg {
