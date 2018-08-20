@@ -16,11 +16,11 @@ export class TestPanel extends Component {
 
 	onPreviewShowCheck = e => {
 		const el = window.document.getElementById("print_preview");
-		console.log(e.target.checked);
+		// console.log(e.target.checked);
 		if (e.target.checked) {
-			el.classList.remove("print_preview_hide");
+			el.classList.remove("print_hide");
 		} else {
-			el.classList.add("print_preview_hide");
+			el.classList.add("print_hide");
 		}
 	};
 
@@ -37,6 +37,16 @@ export class TestPanel extends Component {
 		});
 	};
 
+	onShowPrintGuide = e => {
+		const el = window.document.getElementById("print_guide_tooltip");
+		console.log(el.style.display);
+		if (el.style.display !== "block") {
+			el.style.display = "block";
+		} else {
+			el.style.display = "none";
+		}
+	};
+
 	render() {
 		return (
 			<div className="test_option_panel">
@@ -45,6 +55,10 @@ export class TestPanel extends Component {
 				<br/>
 				<input type="checkbox" id="guide_show_checkbox" onChange={this.onGuideShowCheck} defaultChecked={false}/>
 				<label htmlFor="guide_show_checkbox"> 인쇄 가이드라인 표시</label>
+				{/*<br/>*/}
+				{/*<br/>*/}
+				{/** 헤더/푸터는 사용자가 직접 인쇄 옵션에서 제거해주어야 함 <input type="button" value="가이드 보기" onClick={this.onShowPrintGuide}/>*/}
+
 			</div>
 		);
 	}

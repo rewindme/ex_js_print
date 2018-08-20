@@ -9,6 +9,7 @@ import SampleHTML from "../data/SampleHTML";
 import MonthSheet from "./MonthSheet";
 import OpitonContainer from "./OpitonContainer";
 import TestPanel from "./TestPanel";
+import PrintGuide from "./PrintGuide";
 
 
 export class App extends Component {
@@ -90,6 +91,7 @@ export class App extends Component {
 		return (
 			<Fragment>
 				<TestPanel/>
+				<PrintGuide/>
 				<div id="btn_area">
 					<OpitonContainer option_ui={this.state.option_ui}/>
 					<div className="term">

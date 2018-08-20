@@ -120,7 +120,7 @@
           .page {
               display: none;
           }
-          .print_preview_hide {
+          .print_hide {
               display: none;
           }
           .test_option_panel {
@@ -135,6 +135,18 @@
               z-index: 9999;
               border: 1px solid #bbb;
               background-color: #eee;
+          }
+
+          #print_guide_tooltip {
+              display: none;
+              background-color: #eeeeee;
+              border: 1px solid #bbb;
+              width: 400px;
+              height: 400px;
+              position: fixed;
+              top: 170px;
+              left: 20px;
+              z-index: 9999;
           }
   </style>
       <style>
@@ -151,7 +163,6 @@
               background-color: #000;
               opacity: 0;
           }
-
 
           head { font-family: "NORMAL"; }
           body:after { content: "NORMAL"; display: none;}
