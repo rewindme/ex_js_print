@@ -57,12 +57,6 @@
           #btn_area {
               display: none;
           }
-          .print_btn {
-              display: none;
-          }
-          .term {
-              display: none;
-          }
       </style>
       <style type="text/css" media="screen">
           .spacing {
@@ -110,7 +104,6 @@
               width: 40px;
               text-align: center;
           }
-
   </style>
       <style>
 
@@ -231,28 +224,28 @@
           /*}*/
 
           @page {
-              size: auto;
+              size: auto;/*크롬에서만 인식 하고 나머지 브라우저는 인식 안하는 듯*/
               /*marks: cross;*/
               /*size: A4 landscape;!* 상하 중앙 정렬되지만 배율 수정시 A4 영역만 프린트 됨 *!*/
               /*bleed: 0cm;*/
               /*margin: 0mm; !* margin이 들어가면 safari에서 페이지 분할이 제대로 되지 않음*/
           }
 
-          @media print {
-              .page {
-                  /*border: 0.1mm dashed #999;*/
-                  margin: auto; /* 중앙 정렬: 좌우만 적용됨 */
-                  text-align: center;
-                  /*min-height: initial;*/
-                  width: 28.0cm;
-                  height: 18.2cm;
-                  /*box-shadow: initial;*/
-                  background: #fff;
-                  /*page-break-before: always;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
-                  /*page-break-inside: avoid; !* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*!*/
-                  /*page-break-after: always;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
-              }
-          }
+          /*@media print {*/
+              /*.page {*/
+                  /*!*border: 0.1mm dashed #999;*!*/
+                  /*margin: auto; !* 중앙 정렬: 좌우만 적용됨 *!*/
+                  /*text-align: center;*/
+                  /*!*min-height: initial;*!*/
+                  /*width: 28.0cm;*/
+                  /*height: 18.2cm;*/
+                  /*!*box-shadow: initial;*!*/
+                  /*background: #fff;*/
+                  /*!*page-break-before: always;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*!*/
+                  /*!*page-break-inside: avoid; !* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*!*!*/
+                  /*!*page-break-after: always;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*!*/
+              /*}*/
+          /*}*/
 
           .side_layout {
               position: absolute;
