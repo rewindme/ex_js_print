@@ -20,29 +20,12 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>JS Print</title>
-
-
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_common.css?201s80723065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_left.css?2018072s3065632">
+      <!-- 캘린더 css 추가 시작-->
       <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_view.css?201807s23065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_edit.css?201807s23065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_option.css?2018s0723065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_layer.css?20180s723065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_language.css?20s180723065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_sticker.css?201s80723065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_skin.css?20180s723065632">
-
+      <!-- 캘린더 css 추가 끝-->
       <!-- 팝업 css 추가 시작-->
       <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/popup.css?201807230s65632">
-      <link rel="stylesheet" href="https://calendar.naver.com/css/dist/popup_works.css?20180723065632" type="text/css">
       <!-- 팝업 css 추가 끝-->
-
-
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/calendar_works.css?201s80723065632">
-
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/dh_widget.css?201807230s65632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/cp_address.css?2018072s3065632">
-      <link type="text/css" rel="stylesheet" href="https://calendar.naver.com/css/dist/toast.css?20180723065s632">
 
       <!--<style id="widget_area_style">@media all and (max-width:1000px){#wrap #container{width:auto;right:0}#wrap.deskhome #dh_aside_widget{display:none}#wrap #section_cen{right:0 !important}}</style>-->
       <style type="text/css" media="print">
@@ -148,82 +131,6 @@
           }
   </style>
       <style>
-
-          .fog {
-              position: absolute;
-              left: 0;
-              top: 0;
-              padding: 0;
-              margin: 0;
-              border: 0;
-              width: 100px;
-              height: 100px;
-              background-color: #000;
-              opacity: 0;
-          }
-
-          head { font-family: "NORMAL"; }
-          body:after { content: "NORMAL"; display: none;}
-
-          /*@media screen and (min-width: 1600px) {*/
-              /*head { font-family: "WIDE"; }*/
-              /*body:after { content: "WIDE"; }*/
-          /*}*/
-
-
-          .view_todo .todo_list.grid {
-          }
-          .view_todo .todo_list.grid ul {
-              overflow: auto;
-          }
-          .view_todo .todo_list.grid ul li {
-              float: left;
-              width: 310px;
-              height: 97px;
-              border-radius: 5px;
-              background: #fff;
-              box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-              position: relative;
-              margin: 0 10px 10px 0;
-              overflow: hidden;
-          }
-          .view_todo .todo_list.grid ul li div {
-              background: none;
-          }
-          .view_todo .todo_list.grid ul li .btn_more {
-              position: absolute;
-              margin: 0;
-              top: 62px;
-              right: -3px;
-          }
-          .view_todo .todo_list.grid ul li.on .btn_more {
-              background-position: 100% -564px;
-          }
-          .view_todo .todo_list.grid ul li .btn_state {
-              position: absolute;
-              margin: 0 0 0 0;
-              top: 69px;
-              left: 10px;
-          }
-          .view_todo .todo_list.grid ul li .info {
-              position: absolute;
-              top: 35px;
-              right: -1px;
-              margin: 0;
-              background: #fff;
-          }
-          .view_todo .todo_list.grid ul li .info span {
-              background-position: 100% -895px;
-          }
-          .view_todo .todo_list.grid ul li .info span em,
-          .view_todo .todo_list.grid ul li .info span a {
-              height: 20px;
-              line-height: 20px;
-          }
-          .view_todo .todo_list.grid ul li .inp_txt {
-              padding-right: 28px;
-          }
-
           /* 인쇄를 취해 추가된 css - by.jukyung. */
           /*사이즈 참고 링크: https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size*/
           /*A4 기준으로 레이아웃을 잡고, 크거나 작은 용지로 인쇄를 할 경우엔 배율을 조정하여 인쇄 하도록 함*/
