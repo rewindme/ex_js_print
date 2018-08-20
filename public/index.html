@@ -46,8 +46,8 @@
 
       <!--<style id="widget_area_style">@media all and (max-width:1000px){#wrap #container{width:auto;right:0}#wrap.deskhome #dh_aside_widget{display:none}#wrap #section_cen{right:0 !important}}</style>-->
       <style type="text/css" media="print">
-          .layout_guide {
-              border: 0.1mm dashed #999;
+          body {
+              background-color: #fff;
           }
           .spacing {
               display: none;
@@ -59,6 +59,9 @@
           }
       </style>
       <style type="text/css" media="screen">
+          body {
+              background-color: #cccccc;
+          }
           .spacing {
               display: block;
               height: 0.5cm;
@@ -74,7 +77,8 @@
               margin: auto;
               width:  29.7cm; /* 좌우 여백 총 {1.3 + 0.6}cm 빼기*/
               height: 20.0cm;
-              background-color: #ddd;
+              /*background-color: #ddd;*/
+              background-color: #fff;
               box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);/*화면 구분용도로 사용함. 인쇄에 포함되지 않음(그런 것 같음 0ㅂ0a)*/
           }
           #btn_area {
@@ -188,13 +192,13 @@
           /*A4 기준으로 레이아웃을 잡고, 크거나 작은 용지로 인쇄를 할 경우엔 배율을 조정하여 인쇄 하도록 함*/
           /*인쇄 기본 영역. bg를 white로 필수 설정*/
           .page {
-              border: 0.2mm dashed #999;
+              /*border: 0.2mm dashed #999;*/
               background: #fff;/*필수 옵션*/
               position: relative;
               display: block;
               /*padding: 0.5cm;*/
               padding: 3mm;
-              margin: auto; /*중앙 정렬 - 배율 변경시 중앙 정렬로 인쇄됨*/
+              margin: auto; /*중앙 정렬 - 배율 변경시 좌우 중앙 정렬로 인쇄됨*/
               width:  28.0cm; /* 좌우 여백 총 {1.3 + 0.6}cm 빼기*/
               /*width: 100%;*/
               height: 18.2cm; /* 좌우 여백 총 {2.2 + 0.6}cm 빼기 */ /* padding을 포함해서 21cm 미만으로 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
@@ -204,6 +208,10 @@
               /*page-break-before: always ;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
               page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*/
               page-break-after: always;/*페이지 분할을 위해서 모든 브라우저에서 필수*/
+          }
+          /* 레이아웃 위치를 확인하기 위한 가이드 css: border이므로 사이즈가 포함되는 것을 인지할 것 */
+          .layout_guide {
+              /*border: 0.1mm dashed #999;*/
           }
 
           .page_bg {
@@ -298,7 +306,7 @@
 
       </style>
   </head>
-  <body style="background-color: #cccccc">
+  <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>

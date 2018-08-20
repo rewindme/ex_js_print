@@ -26,7 +26,7 @@ export class MonthSheet extends Component {
 		// el.style.left = "1cm";
 		el.style.top = "0";
 		el.style.left = "0";
-		el.style.backgroundColor = "#eee";//test code
+		// el.style.backgroundColor = "#eee";//test code
 		// el.style.border = "1px solid black";
 		// window.print();
 	}
@@ -36,7 +36,7 @@ export class MonthSheet extends Component {
 			<div>
 				<div className="spacing"></div>
 				<div className="paper_guide">
-					<div className="page">
+					<div className="page layout_guide">
 						<div className="page_bg">
 							<div className="side_layout">
 								<span className="month_str">{this.mon_type[this.props.idx]}. <span style={{fontWeight: "normal"}}>2018</span></span>
