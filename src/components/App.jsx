@@ -32,40 +32,7 @@ export class App extends Component {
 		// window.print();
 	}
 
-	componentDidMount() {
-		var beforePrint = e => {
-			console.log(e);
-			// alert('Before');
-			this.hideBtn();
-		};
-
-		var afterPrint = () => {
-			// alert('After');
-			this.showBtn();
-		};
-
-		// 코드 참고한 곳 https://stackoverflow.com/questions/29912933/determine-if-print-cancel-button-in-google-chromes-print-preview-is-clicked
-		if (window.matchMedia) {// 사파리에서 동작하기 위한 조건문(ie 에서도 되는지 확인)
-			var mediaQueryList = window.matchMedia('print');
-
-			mediaQueryList.addListener(function (mql) {
-				//alert($(mediaQueryList).html());
-				if (mql.matches) {
-					beforePrint(mql);
-				} else {
-					afterPrint(mql);
-				}
-			});
-		}
-
-		window.onbeforeprint = beforePrint;
-		window.onafterprint = afterPrint;
-
-		console.log("componentDidMount");
-	}
-
 	onClickPrint = () => {
-		this.hideBtn();
 		window.print();
 	};
 
@@ -75,16 +42,6 @@ export class App extends Component {
 			...this.state,
 			count: e.target.value,
 		});
-	};
-
-	hideBtn = () => {
-		// const btn_area = window.document.getElementById("btn_area");
-		// btn_area.style.display = "none";
-	};
-
-	showBtn = () => {
-		// const btn_area = window.document.getElementById("btn_area");
-		// btn_area.style.display = "block";
 	};
 
 	render() {
