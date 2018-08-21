@@ -28,17 +28,7 @@
       <!-- 팝업 css 추가 끝-->
 
       <!--<style id="widget_area_style">@media all and (max-width:1000px){#wrap #container{width:auto;right:0}#wrap.deskhome #dh_aside_widget{display:none}#wrap #section_cen{right:0 !important}}</style>-->
-      <style type="text/css" media="print">
-          body {
-              background-color: #fff;
-          }
-          .print_preview_hide {
-              display: block;
-          }
-          .out_of_print {
-              display: none;
-          }
-      </style>
+      
       <style type="text/css" media="screen">
           body {
               background-color: #cccccc;
@@ -151,6 +141,9 @@
               page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %단위 지정불가*/
               page-break-after: always;/* 페이지 분할을 위해서 필요. 단, ie에서 한장에 2장 인쇄 될 수 있음 */
           }
+
+        
+
           /* 레이아웃 위치를 확인하기 위한 가이드 css: border이므로 사이즈가 포함되는 것을 인지할 것 */
           .layout_guide {
               border: 0.1mm dashed #999;
@@ -250,6 +243,81 @@
           }
 
       </style>
+      <style type="text/css" media="print">
+      
+        body {
+            background-color: #fff;
+        }
+        .print_preview_hide {
+            display: block;
+        }
+        .out_of_print {
+            display: none;
+        }
+        /* 화면 중앙 정렬을 위해 body ~ paper_guide까지 height: 100% 상속 */
+        html, 
+        body,
+        #root,
+        #print_preview,
+        .paper_guide {
+            height: 100%;
+            padding: 0;
+            width: auto;
+        }        
+
+        .paper_guide {
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;            
+        }
+
+        /* 가변 처리 */
+        .page,
+        .page_bg,
+        .end {
+            height: 100%;            
+        }
+        .page {
+            padding: 0;
+            width: auto;
+            height: auto;
+        }
+
+        .page_bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .side_layout {
+            right: 0;
+            left: auto;
+            top: 0;
+            bottom: 0;
+        }
+
+        .end {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 4cm;
+        }
+        
+        #month_frame {
+            width: auto!important;
+            height: 100%!important;
+        }
+    </style>
   </head>
   <body>
     <noscript>
