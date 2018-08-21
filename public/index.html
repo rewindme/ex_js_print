@@ -142,7 +142,9 @@
               page-break-after: always;/* 페이지 분할을 위해서 필요. 단, ie에서 한장에 2장 인쇄 될 수 있음 */
           }
 
-        
+            .paper_guide ~ .paper_guide .page {
+                page-break-before: always;
+            }
 
           /* 레이아웃 위치를 확인하기 위한 가이드 css: border이므로 사이즈가 포함되는 것을 인지할 것 */
           .layout_guide {
