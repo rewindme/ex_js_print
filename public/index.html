@@ -137,7 +137,7 @@
           /*인쇄 기본 영역. bg를 white로 필수 설정*/
           .page {
               /*border: 0.2mm dashed #999;*/
-              background: #fff;/*필수 옵션*/
+              background: #fff;/* 배경색 필수 */
               position: relative;
               display: block;
               /*padding: 0.5cm;*/
@@ -147,9 +147,9 @@
               /*width: 100%;*/
               height: 18.2cm; /* 좌우 여백 총 {2.2 + 0.6}cm 빼기 */ /* padding을 포함해서 21cm 미만으로 잡아야 print 배율 100% 했을 때, 빈 다음 페이지가 생기지 않음*/
               /*min-height: 21cm;*/
-              /*page-break-before: always ;!*페이지 분할을 위해서 모든 브라우저에서 필수*!*/
-              page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %지정불가*/
-              page-break-after: always;/*페이지 분할을 위해서 모든 브라우저에서 필수*/
+              /*page-break-before: always ;!*페이지 분할을 위해서 필요. 단, ie에서 첫페이지가 빈페이지로 들어감.*!*/
+              page-break-inside: avoid; /* avoid | auto | inherit ; 기본은 auto; 상속됨; %단위 지정불가*/
+              page-break-after: always;/* 페이지 분할을 위해서 필요. 단, ie에서 한장에 2장 인쇄 될 수 있음 */
           }
           /* 레이아웃 위치를 확인하기 위한 가이드 css: border이므로 사이즈가 포함되는 것을 인지할 것 */
           .layout_guide {
