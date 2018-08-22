@@ -263,6 +263,10 @@
               /*border: 1px dashed #999;*/
           }
 
+          .month_str .out_of_portrait {
+              font-size: inherit;
+          }
+
           .memo {
               position: relative;
               display: block;
@@ -280,7 +284,7 @@
           }
 
       </style>
-      <style type="text/css" media="print">
+      <style type="text/css" media="print">     
         
         body {
             background-color: #fff;
@@ -317,8 +321,7 @@
 
         /* 가변 처리 */
         .page,
-        .page_bg,
-        .end {
+        .page_bg{
             height: 100%;            
         }
         .page {
@@ -352,11 +355,48 @@
         
         #month_frame {
             width: auto!important;
-            height: 100%!important;
+            height: auto!important;
+            position: absolute!important;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         @media (orientation: portrait) { 
+            
+            .end {
+                top: 4cm;
+                right: 0;
+            }
 
+            .side_layout {
+                left: 0;
+                bottom: auto;
+                width: auto;                
+            }
+            
+            .out_of_portrait,
+            .side_layout .memo {
+                display: none;
+            }
+
+            .month,
+            .month_str {
+                float: left;
+                width: auto;
+                margin: 0;
+                font-size: 80px;     
+            }
+
+            .month_str span {
+                font-size: inherit;                
+                font-weight: bold!important;
+            }
+            .month_str span:after {
+                content:'.';
+            }
+            
         }
     </style>
   </head>

@@ -39,7 +39,7 @@ export class MonthSheet extends Component {
 					<div className="page">
 						<div className="page_bg">
 							<div className="side_layout">
-								<span className="month_str">{this.mon_type[this.props.idx]}. <span style={{fontWeight: "normal"}}>2018</span></span>
+								<span className="month_str"><span className="out_of_portrait">{this.mon_type[this.props.idx]}.</span> <span style={{fontWeight: "normal"}}>2018</span></span>
 								<div className="month">{`${this.props.idx + 1}`}</div>
 								<Memo/>
 							</div>
